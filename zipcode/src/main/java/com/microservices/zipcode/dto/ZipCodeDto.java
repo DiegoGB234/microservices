@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ZipCodeDto {
 
-    private Long id;
     private String zipCode;
-    private List<NeighborhoodDto> neighborhoods;
+    // private List<NeighborhoodDto> neighborhoods;
 }

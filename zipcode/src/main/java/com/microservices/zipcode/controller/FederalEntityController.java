@@ -1,16 +1,15 @@
 package com.microservices.zipcode.controller;
 
 import java.util.List;
-
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.microservices.zipcode.dto.FederalEntityDto;
 import com.microservices.zipcode.entity.*;
-import com.microservices.zipcode.service.ZipcodeService;
-
+import com.microservices.zipcode.service.FederalService;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.RequiredArgsConstructor;
 
 
@@ -19,23 +18,18 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class FederalEntityController {
 
-    private final ZipcodeService service;
+    // private final ZipcodeService service;
+    private final FederalService service;
 
-    @GetMapping
-    public List<FederalEntity> findAll() {
-        // return service.getFederalEntities();
-        return List.of(
-            new FederalEntity(1L, "Chiapas"),
-            new FederalEntity(2L, "Oaxaca"),
-            new FederalEntity(3L, "Puebla")
-        );
+    @PostMapping
+    public ResponseEntity<FederalEntityDto> createFederal( @RequestBody FederalEntityDto federalEntityDto) {
+        return ResponseEntity.ok(service.createFederalEntity(federalEntityDto));
     }
 
+    @GetMapping
+    public List<FederalEntity> findAll(){
+        return  service.finAll();
+    
+    }
 
-    // @GetMapping("/{id}/details")
-    // public FederalEntityDto getDetails(
-    //         @PathVariable Long id) {
-
-    //     // return service.getFederalEntityDetails(id);
-    // }
 }

@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class NeighborhoodDto {
 
-    private Long id;
+    // private Long id;
     private String neighborhoodName;
 }
