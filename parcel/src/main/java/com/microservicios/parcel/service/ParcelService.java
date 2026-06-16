@@ -1,11 +1,12 @@
 package com.microservicios.parcel.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.microservicios.parcel.dto.ParcelDto;
 import com.microservicios.parcel.entity.Parcel;
-import com.microservicios.parcel.repository.ParcelRepository;
-import java.util.List; 
+import com.microservicios.parcel.repository.ParcelRepository; 
 
 @Service
 public class ParcelService {
@@ -17,7 +18,8 @@ public class ParcelService {
     }
 
     public List<Parcel> getAllParcels() {
-        return repository.findAll();
+        List <Parcel> parcels = repository.findAll();
+        return parcels;
     }
 
     public Parcel getParcelById(Long id) {

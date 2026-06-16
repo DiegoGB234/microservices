@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor()
 @NoArgsConstructor()
 public class ParcelDto {
-    private Long id;
     private String remitentName;
     private String status;
     private String receiverName;
