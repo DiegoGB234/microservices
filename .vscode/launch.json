@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ParcelApplication",
+            "request": "launch",
+            "mainClass": "com.microservicios.parcel.ParcelApplication"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-ZipcodeApplication<zipcode>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -20,7 +26,7 @@
             "projectName": "config-server",
             "args": "",
             "envFile": "${workspaceFolder}/.env",
-            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=60230 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=config-server"
+            "vmArgs": "-Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Dspring.boot.project.name=config-server"
         },
         {
             "type": "java",
@@ -31,7 +37,21 @@
             "projectName": "eureka-server",
             "args": "",
             "envFile": "${workspaceFolder}/.env",
+<<<<<<< HEAD
             "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=56150 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=eureka-server"
+=======
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=59570 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=eureka-server"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ParcelApplication<parcel>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.microservicios.parcel.ParcelApplication",
+            "projectName": "parcel",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+>>>>>>> b5a72a8aa880dc734acf1406a4edf53cf3cc79f0
         },
         {
             "type": "java",
