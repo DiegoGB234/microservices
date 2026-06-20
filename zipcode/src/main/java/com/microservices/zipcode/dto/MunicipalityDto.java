@@ -13,5 +13,5 @@ public class MunicipalityDto {
 
     // private Long id;
     private String municipalityName;
-    private List<ZipCodeDto> zipCodes;
+    // private List<ZipCodeDto> zipCodes;
 }

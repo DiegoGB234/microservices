@@ -1,6 +1,6 @@
 package com.microservices.zipcode.service;
 
-import org.springframework.http.ResponseEntity;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.microservices.zipcode.dto.NeighborhoodDto;
@@ -24,4 +24,11 @@ public class NeighborhoodService {
         );
     }
 
+    public Neighborhood findOne(Long id){
+        return neighborhoodRepository.findById(id).orElseThrow(() -> new RuntimeException(""));
+    }
+
+    public List<Neighborhood> findAll(){
+        return neighborhoodRepository.findAll();
+    }
 }

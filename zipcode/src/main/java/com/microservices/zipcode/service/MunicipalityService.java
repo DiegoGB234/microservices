@@ -20,6 +20,7 @@ public class MunicipalityService {
     private final MunicipalityRepository municipalityRepository;
     private final ZipCodeRespository zipCodeRepository;
 
+    
     public MunicipalityDto createMunicipality(MunicipalityDto municipalityDto){
          // 1. Crear y guardar el municipality
         Municipality municipality = new Municipality();
@@ -27,21 +28,29 @@ public class MunicipalityService {
         Municipality saved = municipalityRepository.save(municipality);
 
         // 2. Crear y asociar cada ZipCode
-        List<ZipCode> zipCodes = municipalityDto.getZipCodes().stream()
-            .map(dto -> {
-                ZipCode zc = new ZipCode();
-                zc.setZipCode(dto.getZipCode());
-                zc.setMunicipality(saved);   // ← asociación clave
-                return zc;
-            }).collect(Collectors.toList());
+        // List<ZipCode> zipCodes = municipalityDto.getZipCodes().stream()
+        //     .map(dto -> {
+        //         ZipCode zc = new ZipCode();
+        //         zc.setZipCode(dto.getZipCode());
+        //         zc.setMunicipality(saved);   // ← asociación clave
+        //         return zc;
+        //     }).collect(Collectors.toList());
         
-        zipCodeRepository.saveAll(zipCodes);
+        // zipCodeRepository.saveAll(zipCodes);
 
         // 3. Regresar DTO
         return new MunicipalityDto(
-            saved.getMunicipalityName(),
-            municipalityDto.getZipCodes()
+            saved.getMunicipalityName()
         );
+        
+    }
+
+    public List<Municipality> findAll(){
+        return municipalityRepository.findAll();
+    }
+
+    public Municipality findOne(Long id){
+        return municipalityRepository.findById(id).orElseThrow(()-> new RuntimeException("No se encontro ningun valor"));
     }
 
 }

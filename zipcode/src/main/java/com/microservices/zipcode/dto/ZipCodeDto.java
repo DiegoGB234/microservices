@@ -12,5 +12,7 @@ import lombok.NoArgsConstructor;
 public class ZipCodeDto {
 
     private String zipCode;
+
+    private Long municipality;
     // private List<NeighborhoodDto> neighborhoods;
 }

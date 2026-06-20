@@ -23,7 +23,7 @@ public class NeighborhoodController {
     public ResponseEntity<NeighborhoodDto> createNeighborhood(NeighborhoodDto neighborhoodDto){
         return ResponseEntity.ok(service.createNeighborhood(neighborhoodDto));
     }
-
+    
     @GetMapping()
     public ResponseEntity<String> findAll(){
         return ResponseEntity.ok("find all neighborhoods");

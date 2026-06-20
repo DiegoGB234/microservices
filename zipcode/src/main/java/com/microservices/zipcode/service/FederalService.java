@@ -13,12 +13,9 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 public class FederalService {
+
     private final  FederalRepository federalRepository;
 
-
-    // public FederalService(FederalRepository federalRepository) {
-    //     this.federalRepository = federalRepository;
-    // }
 
     public List<FederalEntity> finAll(){
         return federalRepository.findAll();

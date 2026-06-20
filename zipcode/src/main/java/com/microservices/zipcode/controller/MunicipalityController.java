@@ -9,6 +9,8 @@ import com.microservices.zipcode.dto.MunicipalityDto;
 import com.microservices.zipcode.service.MunicipalityService;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.GetMapping;  
+
 
 @RestController
 @RequestMapping("/municipalities")
@@ -20,4 +22,10 @@ public class MunicipalityController {
     public ResponseEntity<MunicipalityDto> createMunicipality(MunicipalityDto municipalityDto){
         return ResponseEntity.ok(service.createMunicipality(municipalityDto));
     }
+
+    @GetMapping
+    public String getMethodName() {
+        return "HHOOOOO";
+    }
+    
 }
