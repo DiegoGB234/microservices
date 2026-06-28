@@ -1,20 +1,29 @@
 services:
 
-  postgres:
+  zipcode:
     image: postgres:15
     container_name: zipcode-postgres
-
     environment:
       POSTGRES_USER: diego_papu
       POSTGRES_PASSWORD: diego_pap1
       POSTGRES_DB: zipcode_db
-
     ports:
       - "5432:5432"
-
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - zipcode_data:/var/lib/postgresql/data
 
+  parcel:
+    image: postgres:15
+    container_name: parcel-postgres
+    environment:
+      POSTGRES_USER: diego_papu
+      POSTGRES_PASSWORD: diego_pap1
+      POSTGRES_DB: parcel_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - parcel_data:/var/lib/postgresql/data
 
 volumes:
-  postgres_data:
+  zipcode_data:
+  parcel_data:
