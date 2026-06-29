@@ -21,8 +21,21 @@ services:
       POSTGRES_DB: parcel_db
     ports:
       - "5433:5432"
+      
     volumes:
       - parcel_data:/var/lib/postgresql/data
+
+  users:
+    image: postgres:15
+    container_name: users-postgres
+    environment:
+      POSTGRES_USER: diego_papu
+      POSTGRES_PASSWORD: diego_pap1
+      POSTGRES_DB: users_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - users_data:/var/lib/postgresql/data
 
 volumes:
   zipcode_data:

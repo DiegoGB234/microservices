@@ -26,7 +26,7 @@
             "projectName": "config-server",
             "args": "",
             "envFile": "${workspaceFolder}/.env",
-            "vmArgs": "-Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Dspring.boot.project.name=config-server"
+            "vmArgs": "-Dspring.jmx.enabled=true -Dspring.application.admin.enabled=true -Dspring.boot.project.name=config-server -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=49692 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost"
         },
         {
             "type": "java",
@@ -46,6 +46,16 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "com.microservices.api_gateway.ApiGatewayApplication",
             "projectName": "api-gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ParcelApplication<parcel>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.microservicios.parcel.ParcelApplication",
+            "projectName": "parcel",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
