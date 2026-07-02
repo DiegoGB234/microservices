@@ -40,3 +40,4 @@ services:
 volumes:
   zipcode_data:
   parcel_data:
+  users_data:
